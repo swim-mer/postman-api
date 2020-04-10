@@ -11,3 +11,6 @@ Run virtualenv with Flask:
 
 Install flask in virtual environment:
 - `$ flask/bin/pip install flask`
+
+Install Flask HTTPAuth:
+- `$ flask/bin/pip install flask-httpauth`
