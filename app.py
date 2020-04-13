@@ -34,7 +34,7 @@ def get_token(f):
             return jsonify({'Error': 'Token is missing'})
         try:
             data = jwt.decode(token, key)
-            assertTrue(data == user)
+            data == user
         except:
             return jsonify({'Error': 'Token is invalid'})
 
