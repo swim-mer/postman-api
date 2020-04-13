@@ -1,4 +1,4 @@
-Create a REST API in conjunction with Postman.
+Create a REST API in conjunction with Postman. Use Python 3. 
 
 # Flask Installation on Mac:
 Run venv with Flask:
