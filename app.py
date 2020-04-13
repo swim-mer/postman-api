@@ -4,7 +4,7 @@ Start a Flask web app.
 """
 from flask import Flask, make_response, jsonify
 from flask_httpauth import HTTPBasicAuth
-from flask_jwt import JWT
+import jwt
 
 
 # Web app to run
@@ -19,6 +19,8 @@ user = {
     'password': 'admin'
 }
 
+# Secret Key
+key = 'secret'
 
 # Entry points
 @app.route('/', strict_slashes=False)
@@ -29,7 +31,8 @@ def home():
 @app.route('/login', strict_slashes=False)
 @auth.login_required
 def login():
-    return jsonify({'token': 'token placeholder'})
+    return jwt.encode({'some': 'payload'}, key, algorithm='HS256')
+#     return 'test'
 
 # Authentication
 @auth.get_password
