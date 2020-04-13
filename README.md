@@ -18,6 +18,7 @@ Install PyJWT:
 
 To access home page:
 - Run flask environment in a terminal and enter `$ ./app.py`
-- Make a GET request in Postman at http://0.0.0.0:8888/login
-- Copy token and create header called 'x-access-token' with token as value
+- Make a GET request in Postman at http://0.0.0.0:8888/login with credentials: 
+- - 'user': 'admin', 'password': 'admin'
+- Copy token in response and create header called 'x-access-token' with token as value
 - Make a GET request in Postman at http://0.0.0.0:8888
