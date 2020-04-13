@@ -2,7 +2,7 @@
 """
 Start a Flask web app.
 """
-from flask import Flask, make_response, jsonify, request
+from flask import Flask, jsonify, request
 from flask_httpauth import HTTPBasicAuth
 import jwt
 from functools import wraps
@@ -70,7 +70,7 @@ def get_password(username):
 
 @auth.error_handler
 def unauthorized():
-    return make_response({'Error': 'Invalid credentials'}, 404)
+    return jsonify({'Error': 'Invalid credentials'}), 404
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='8888', debug=True)
