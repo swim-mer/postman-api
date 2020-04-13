@@ -2,7 +2,7 @@
 """
 Start a Flask web app.
 """
-from flask import Flask, make_response
+from flask import Flask, make_response, jsonify
 from flask_httpauth import HTTPBasicAuth
 from flask_jwt import JWT
 
@@ -20,7 +20,6 @@ user = {
 }
 
 
-
 # Entry points
 @app.route('/', strict_slashes=False)
 def home():
@@ -30,8 +29,7 @@ def home():
 @app.route('/login', strict_slashes=False)
 @auth.login_required
 def login():
-    return "Login"
-
+    return jsonify({'token': 'token placeholder'})
 
 # Authentication
 @auth.get_password
@@ -46,4 +44,4 @@ def unauthorized():
     return make_response({'Error': 'Invalid credentials'}, 404)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port='8888')
+    app.run(host='0.0.0.0', port='8888', debug=True)
