@@ -24,14 +24,16 @@ user = {
 key = 'secret'
 
 
-# Token
-def get_token(f):
+# Tokens
+def get_tokens(f):
     @wraps(f)
     def decorated(*args, **kwargs):
         if 'x-access-token' in request.headers:
             token = request.headers['x-access-token']
         else:
             return jsonify({'Error': 'Token is missing'})
+        if 'Postman-Token' not in request.headers:
+            return jsonify({'Error': 'Postman required'})
         try:
             data = jwt.decode(token, key)
             data == user
@@ -45,7 +47,7 @@ def get_token(f):
 
 # Entry points
 @app.route('/', strict_slashes=False)
-@get_token
+@get_tokens
 def home(user):
     return "Home Page"
 
