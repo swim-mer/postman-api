@@ -7,7 +7,8 @@ Install virtualenv on a Mac:
 - If `virtualenv` is still not found, run `$ sudo /usr/bin/easy_install virtualenv`
 
 Run virtualenv with Flask:
-- `$ virtualenv flask`
+- `$ virtualenv flask` for Python before 3.3
+- `$ python3 -m venv flask` for Python 3.3+
 
 Install flask in virtual environment:
 - `$ flask/bin/pip install flask`
