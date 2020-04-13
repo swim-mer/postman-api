@@ -31,7 +31,7 @@ def home():
 @app.route('/login', strict_slashes=False)
 @auth.login_required
 def login():
-    return jwt.encode({'some': 'payload'}, key, algorithm='HS256')
+    return jwt.encode(user, key, algorithm='HS256')
 
 
 # Authentication
