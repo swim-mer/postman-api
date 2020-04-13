@@ -32,7 +32,7 @@ def home():
 @auth.login_required
 def login():
     return jwt.encode({'some': 'payload'}, key, algorithm='HS256')
-#     return 'test'
+
 
 # Authentication
 @auth.get_password
