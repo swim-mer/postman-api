@@ -13,5 +13,5 @@ Install flask in virtual environment:
 Install Flask HTTPAuth:
 - `$ pip install flask-httpauth`
 
-Install Flask-JWT:
-- `$ pip install flask-jwt`
+Install PyJWT:
+- `$ pip install pyjwt`
