@@ -18,7 +18,7 @@ Install PyJWT:
 - `$ pip install pyjwt`
 
 ## To access protected pages:
-- Run flask environment in a terminal and execute `app.py`
+- Run flask environment in a terminal and execute `app.py` (`$ ./app/app.py`)
 - Make a POST request in Postman at http://0.0.0.0:8888/login with credentials: 
   - 'user': 'admin', 'password': 'admin'
 - Copy token in provided response and create header called 'x-access-token' with token as value in request headers
