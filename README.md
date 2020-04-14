@@ -2,7 +2,7 @@
 Create a REST API in Python 3. The user logs in using basic HTTP authentication to acquire a user token. The user provides the token in the request header to access protected pages. 
 
 ## Flask Installation on Mac:
-Create virtual environment called flask, inside of root directory of cloned repository:
+Create virtual environment called flask, inside root directory of cloned repository:
 - `$ python3 -m venv flask` for Python 3.3+
 
 Activate environment:
