@@ -22,3 +22,7 @@ Install PyJWT:
 - Make a POST request in Postman at http://0.0.0.0:8888/login with credentials: 
   - 'user': 'admin', 'password': 'admin'
 - Copy token in provided response and create header called 'x-access-token' with token as value in request headers
+
+### Protected pages:
+- http://0.0.0.0:8888 - Home Page
+- http://0.0.0.0:8888/protected - Acquire payload
