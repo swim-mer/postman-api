@@ -52,7 +52,7 @@ def home(user):
     return "Home Page"
 
 
-@app.route('/login', strict_slashes=False)
+@app.route('/login', strict_slashes=False, methods=['POST'])
 @auth.login_required
 def login():
     token = jwt.encode(user, key, algorithm='HS256')
