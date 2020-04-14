@@ -17,9 +17,8 @@ Install Flask HTTPAuth:
 Install PyJWT:
 - `$ pip install pyjwt`
 
-## To access home page:
+## To access protected pages:
 - Run flask environment in a terminal and enter `$ ./app/app.py`
 - Make a POST request in Postman at http://0.0.0.0:8888/login with credentials: 
   - 'user': 'admin', 'password': 'admin'
-- Copy token in response and create request header called 'x-access-token' with token as value
-- Make a GET request in Postman at http://0.0.0.0:8888
+- Copy token in provided response and create header called 'x-access-token' with token as value in request headers
