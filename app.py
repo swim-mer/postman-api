@@ -31,14 +31,14 @@ def get_tokens(f):
         if 'x-access-token' in request.headers:
             token = request.headers['x-access-token']
         else:
-            return jsonify({'Error': 'Token is missing'})
+            return jsonify({'Error': 'Token is missing'}), 401
         if 'Postman-Token' not in request.headers:
             return jsonify({'Error': 'Postman required'})
         try:
             data = jwt.decode(token, key)
             data == user
-        except:
-            return jsonify({'Error': 'Token is invalid'})
+        except Exception as e:
+            return jsonify({'Error': 'Token is invalid'}), 401
 
         return f(user, *args, **kwargs)
 
@@ -49,14 +49,14 @@ def get_tokens(f):
 @app.route('/', strict_slashes=False)
 @get_tokens
 def home(user):
-    return "Home Page"
+    return "Home Page", 200
 
 
 @app.route('/login', strict_slashes=False, methods=['POST'])
 @auth.login_required
 def login():
     token = jwt.encode(user, key, algorithm='HS256')
-    return jsonify({'token': token.decode('UTF-8')})
+    return jsonify({'token': token.decode('UTF-8')}), 200
 
 
 # Authentication
@@ -70,7 +70,8 @@ def get_password(username):
 
 @auth.error_handler
 def unauthorized():
-    return jsonify({'Error': 'Invalid credentials'}), 404
+    return jsonify({'Error': 'Invalid credentials'}), 401
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='8888', debug=True)
