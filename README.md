@@ -21,7 +21,7 @@ Install PyJWT:
 - `$ pip install pyjwt`
 
 ### Run server
-- Execute `app.py` (`$ ./app/app.py`)
+- Execute `app.py` (`$ ./app/app.py` or `python3 app/app.py`)
 
 ## To access protected pages:
 - Make a POST request in Postman at http://0.0.0.0:8888/login with credentials: 
