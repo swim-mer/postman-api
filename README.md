@@ -1,7 +1,10 @@
-# Python - Postman - API
+# Python - Postman - Flask - API
 Create a REST API in Python 3. The user logs in using basic HTTP authentication to acquire a user token. The user provides the token in the request header to access protected pages. 
 
-## Flask Installation on Mac:
+## App Installation on Mac:
+Clone repository
+- `$ git clone https://github.com/swim-mer/postman-api.git`
+
 Create virtual environment called flask, inside root directory of cloned repository:
 - `$ python3 -m venv flask` for Python 3.3+
 
